@@ -1,0 +1,12 @@
+.*.sw?
+.swp
+.swo
+.classpath
+.project
+.settings
+target
+.DS_Store
+.DS_Store?
+ebay.log
+node_modules
+myLocal.xml

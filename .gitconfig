@@ -1,0 +1,23 @@
+[user]
+	email = tsullivan@paypal.com
+	name = Timothy Sullivan
+[push]
+	default = nothing
+[merge]
+	keepBackup = false;
+	tool = p4merge
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+	ignorecase = false
+	editor = vim -f
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[alias]
+	lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
+	co = checkout
+	cob = checkout -b

@@ -1,0 +1,5 @@
+--color
+--sort-files
+--smart-case
+
+--ignore-dir=.build
