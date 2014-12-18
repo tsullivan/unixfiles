@@ -1,0 +1,3 @@
+OPTIONS=male,name:Quixotim,role:Knight
+OPTIONS=horsename=Rocinantim
+OPTIONS=autopickup,pickup_types:$

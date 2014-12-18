@@ -3,6 +3,5 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # env
-unset HISTFILE
 export INPUTRC=~/.inputrc
 export PATH=~/bin:/usr/local/bin:$PATH

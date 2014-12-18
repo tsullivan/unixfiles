@@ -3,3 +3,4 @@
 --smart-case
 
 --ignore-dir=.build
+--ignore-dir=client/bower_components
