@@ -3,4 +3,5 @@
 --smart-case
 
 --ignore-dir=.build
+--ignore-dir=coverage
 --ignore-dir=bower_components
