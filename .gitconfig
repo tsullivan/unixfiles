@@ -31,3 +31,4 @@
 	co = checkout
 	cob = checkout -b
 	lsr = ls-remote --heads
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
