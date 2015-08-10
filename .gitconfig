@@ -27,8 +27,8 @@
 	trustExitCode = false
 	keepBackup = false
 [alias]
-	lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
+	ci = commit -v
 	co = checkout
 	cob = checkout -b
-	lsr = ls-remote --heads
+	lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
