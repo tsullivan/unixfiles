@@ -1,9 +1,0 @@
---color
---sort-files
---smart-case
-
---ignore-dir=.build
---ignore-dir=build
---ignore-dir=coverage
---ignore-dir=bower_components
---ignore-dir=.node_binaries
