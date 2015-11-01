@@ -31,3 +31,4 @@
 	cob = checkout -b
 	lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
