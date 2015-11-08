@@ -5,3 +5,5 @@ fi
 # env
 export INPUTRC=~/.inputrc
 export PATH=~/bin:/usr/local/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
