@@ -1,0 +1,103 @@
+{
+  "defaults": {
+    "shield": {
+      "users": [
+        {
+          "username": "admin",
+          "password": "notsecure",
+          "roles": ["admin"]
+        },
+        {
+          "username": "kibana",
+          "password": "notsecure",
+          "roles": ["kibana4", "kibana4_server"]
+        },
+        {
+          "username": "user",
+          "password": "notsecure",
+          "roles": ["kibana4", "marvel_user"]
+        },
+        {
+          "username": "marvel_agent",
+          "password": "notsecure",
+          "roles": ["remote_marvel_agent"]
+        },
+        {
+          "username": "logstash",
+          "password": "notsecure",
+          "roles": ["logstash"]
+        }
+      ]
+    }
+  },
+  "clusters": {
+    "monitoringcluster-2.2": {
+      "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/.esvm-monitoringcluster-2.2",
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.2/shield-2.2.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.2/marvel-agent-2.2.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.2/watcher-2.2.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "monitoringcluster-2.2",
+        "http.port": "9210",
+        "transport.tcp.port": "9310",
+        "marvel.agent.exporters.id1.type": "local"
+      }
+    },
+    "productioncluster-2.2": {
+      "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/.esvm-productioncluster-2.2",
+      "nodes": 2,
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.2/shield-2.2.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.2/marvel-agent-2.2.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.2/watcher-2.2.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "productioncluster-2.2",
+        "marvel.agent.exporters.id2.type": "http",
+        "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
+        "marvel.agent.exporters.id2.auth.username": "marvel_agent",
+        "marvel.agent.exporters.id2.auth.password": "notsecure"
+      }
+    },
+    "monitoringcluster-2.3": {
+      "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/.esvm-monitoringcluster-2.3",
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.3/marvel-agent-2.3.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.3/watcher-2.3.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "monitoringcluster-2.3",
+        "http.port": "9210",
+        "transport.tcp.port": "9310",
+        "marvel.agent.exporters.id1.type": "local"
+      }
+    },
+    "productioncluster-2.3": {
+      "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/.esvm-productioncluster-2.3",
+      "nodes": 2,
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.3/marvel-agent-2.3.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.3/watcher-2.3.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "productioncluster-2.3",
+        "marvel.agent.exporters.id2.type": "http",
+        "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
+        "marvel.agent.exporters.id2.auth.username": "marvel_agent",
+        "marvel.agent.exporters.id2.auth.password": "notsecure"
+      }
+    }
+  }
+}
