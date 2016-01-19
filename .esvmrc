@@ -33,7 +33,7 @@
   "clusters": {
     "monitoringcluster-2.2": {
       "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
-      "directory": "/Users/tsullivan/.esvm-monitoringcluster-2.2",
+      "directory": "/Users/tsullivan/test/2.2/monitoringcluster",
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
         { "name": "shield", "path": "file:///Users/tsullivan/test/2.2/shield-2.2.0-SNAPSHOT.zip" },
@@ -49,7 +49,7 @@
     },
     "productioncluster-2.2": {
       "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
-      "directory": "/Users/tsullivan/.esvm-productioncluster-2.2",
+      "directory": "/Users/tsullivan/test/2.2/productioncluster",
       "nodes": 2,
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
@@ -67,7 +67,7 @@
     },
     "monitoringcluster-2.3": {
       "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
-      "directory": "/Users/tsullivan/.esvm-monitoringcluster-2.3",
+      "directory": "/Users/tsullivan/test/2.3/monitoringcluster",
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
         { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
@@ -83,7 +83,7 @@
     },
     "productioncluster-2.3": {
       "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
-      "directory": "/Users/tsullivan/.esvm-productioncluster-2.3",
+      "directory": "/Users/tsullivan/test/2.3/productioncluster",
       "nodes": 2,
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
