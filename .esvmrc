@@ -31,14 +31,23 @@
     }
   },
   "clusters": {
+    "live": {
+      "version": "2.1",
+      "plugins": [
+        "license",
+        "shield",
+        "marvel-agent",
+        "watcher"
+      ]
+    },
     "monitoringcluster-2.2": {
       "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
       "directory": "/Users/tsullivan/test/2.2/monitoringcluster",
       "plugins": [
-        { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
-        { "name": "shield", "path": "file:///Users/tsullivan/test/2.2/shield-2.2.0-SNAPSHOT.zip" },
-        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.2/marvel-agent-2.2.0-SNAPSHOT.zip" },
-        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.2/watcher-2.2.0-SNAPSHOT.zip" }
+        { "name": "license", "staging": true },
+        { "name": "shield", "staging": true },
+        { "name": "marvel-agent", "staging": true },
+        { "name": "watcher", "staging": true }
       ],
       "config": {
         "cluster.name": "monitoringcluster-2.2",
@@ -50,12 +59,11 @@
     "productioncluster-2.2": {
       "binary": "/Users/tsullivan/test/2.2/elasticsearch-2.2.0-SNAPSHOT.tar.gz",
       "directory": "/Users/tsullivan/test/2.2/productioncluster",
-      "nodes": 2,
       "plugins": [
-        { "name": "license", "path": "file:///Users/tsullivan/test/2.2/license-2.2.0-SNAPSHOT.zip" },
-        { "name": "shield", "path": "file:///Users/tsullivan/test/2.2/shield-2.2.0-SNAPSHOT.zip" },
-        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.2/marvel-agent-2.2.0-SNAPSHOT.zip" },
-        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.2/watcher-2.2.0-SNAPSHOT.zip" }
+        { "name": "license", "staging": true },
+        { "name": "shield", "staging": true },
+        { "name": "marvel-agent", "staging": true },
+        { "name": "watcher", "staging": true }
       ],
       "config": {
         "cluster.name": "productioncluster-2.2",
@@ -84,7 +92,6 @@
     "productioncluster-2.3": {
       "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
       "directory": "/Users/tsullivan/test/2.3/productioncluster",
-      "nodes": 2,
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
         { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
@@ -93,6 +100,39 @@
       ],
       "config": {
         "cluster.name": "productioncluster-2.3",
+        "marvel.agent.exporters.id2.type": "http",
+        "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
+        "marvel.agent.exporters.id2.auth.username": "marvel_agent",
+        "marvel.agent.exporters.id2.auth.password": "notsecure"
+      }
+    },
+    "monitoringcluster-2.3-tlrx": {
+      "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/test/2.3/monitoringcluster-tlrx",
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.3/tlrx-marvel-agent-2.3.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.3/watcher-2.3.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "monitoringcluster-2.3-tlrx",
+        "http.port": "9210",
+        "transport.tcp.port": "9310",
+        "marvel.agent.exporters.id1.type": "local"
+      }
+    },
+    "productioncluster-2.3-tlrx": {
+      "binary": "/Users/tsullivan/test/2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
+      "directory": "/Users/tsullivan/test/2.3/productioncluster-tlrx",
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/test/2.3/license-2.3.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/test/2.3/shield-2.3.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/2.3/tlrx-marvel-agent-2.3.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/test/2.3/watcher-2.3.0-SNAPSHOT.zip" }
+      ],
+      "config": {
+        "cluster.name": "productioncluster-2.3-tlrx",
         "marvel.agent.exporters.id2.type": "http",
         "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
         "marvel.agent.exporters.id2.auth.username": "marvel_agent",
