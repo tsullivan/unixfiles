@@ -26,9 +26,9 @@
       "branch": "master",
       "directory": "/Users/tsullivan/test/data/redesign",
       "plugins": [
-        { "name": "license", "path": "file:///Users/tsullivan/test/builds/elasticon/license-5.0.0-SNAPSHOT.zip" },
-        { "name": "shield", "path": "file:///Users/tsullivan/test/builds/elasticon/shield-5.0.0-SNAPSHOT.zip" },
-        { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/builds/elasticon/marvel-agent-5.0.0-SNAPSHOT.zip" }
+        { "name": "license", "snapshot": true },
+        { "name": "shield", "snapshot": true },
+        { "name": "marvel-agent", "snapshot": true }
       ],
       "nodes": 2,
       "config": {
