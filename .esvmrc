@@ -1,5 +1,10 @@
 {
   "defaults": {
+    "config": {
+      "http.host": "0.0.0.0",
+      "http.cors.enabled": true,
+      "discovery.zen.ping.multicast.enabled": false
+    },
     "shield": {
       "users": [
         { "username": "admin", "password": "notsecure", "roles": ["admin"] },
@@ -11,44 +16,17 @@
     }
   },
   "clusters": {
-    "latest": {
-      "version": "2.2",
-      "directory": "/Users/tsullivan/test/data/2.2",
-      "plugins": [ "license", "marvel-agent", "shield" ],
-      "nodes": 2,
-      "config": {
-        "http.host": "0.0.0.0",
-        "http.cors.enabled": true,
-        "discovery.zen.ping.multicast.enabled": false
-      }
-    },
-    "redesign": {
-      "branch": "master",
-      "directory": "/Users/tsullivan/test/data/redesign",
-      "plugins": [
-        { "name": "license", "snapshot": true },
-        { "name": "shield", "snapshot": true },
-        { "name": "marvel-agent", "snapshot": true }
-      ],
-      "nodes": 2,
-      "config": {
-      }
-    },
     "tlrx-monitor": {
       "binary": "/Users/tsullivan/test/builds/tlrx-2.3/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
       "directory": "/Users/tsullivan/test/data/tlrx-2.3-monitor",
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/license-2.3.0-SNAPSHOT.zip" },
-        { "name": "shield", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/shield-2.3.0-SNAPSHOT.zip" },
         { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/marvel-agent-2.3.0-SNAPSHOT.zip" }
       ],
       "nodes": [
         { "node": { "data": true, "master": true } }
       ],
       "config": {
-        "http.host": "0.0.0.0",
-        "http.cors.enabled": true,
-        "discovery.zen.ping.multicast.enabled": false,
         "cluster.name": "tlrx-monitor",
         "http.port": "9210",
         "transport.tcp.port": "9310",
@@ -60,13 +38,9 @@
       "directory": "/Users/tsullivan/test/data/tlrx-2.3-prod",
       "plugins": [
         { "name": "license", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/license-2.3.0-SNAPSHOT.zip" },
-        { "name": "shield", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/shield-2.3.0-SNAPSHOT.zip" },
         { "name": "marvel-agent", "path": "file:///Users/tsullivan/test/builds/tlrx-2.3/marvel-agent-2.3.0-SNAPSHOT.zip" }
       ],
       "config": {
-        "http.host": "0.0.0.0",
-        "http.cors.enabled": true,
-        "discovery.zen.ping.multicast.enabled": false,
         "cluster.name": "tlrx-prod",
         "marvel.agent.exporters.id2.type": "http",
         "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
@@ -82,17 +56,14 @@
     },
     "2.x-monitor": {
       "branch": "2.x",
-      "directory": "/Users/tsullivan/test/data/2x-monitor",
+      "directory": "/Users/tsullivan/test/data/2.x-monitor",
       "plugins": [
         { "name": "license", "snapshot": true },
-        { "name": "marvel-agent", "snapshot": true },
-        { "name": "shield", "snapshot": true }
+        { "name": "shield", "snapshot": true },
+        { "name": "marvel-agent", "snapshot": true, "snapshot": true }
       ],
       "config": {
-        "http.host": "0.0.0.0",
-        "http.cors.enabled": true,
-        "discovery.zen.ping.multicast.enabled": false,
-        "cluster.name": "twodoteks-monitor",
+        "cluster.name": "monitor",
         "http.port": "9210",
         "transport.tcp.port": "9310",
         "marvel.agent.exporters.id1.type": "local"
@@ -100,17 +71,14 @@
     },
     "2.x-prod": {
       "branch": "2.x",
-      "directory": "/Users/tsullivan/test/data/2x-prod",
+      "directory": "/Users/tsullivan/test/data/2.x-prod",
       "plugins": [
         { "name": "license", "snapshot": true },
-        { "name": "marvel-agent", "snapshot": true },
-        { "name": "shield", "snapshot": true }
+        { "name": "shield", "snapshot": true },
+        { "name": "marvel-agent", "snapshot": true }
       ],
       "config": {
-        "http.host": "0.0.0.0",
-        "http.cors.enabled": true,
-        "discovery.zen.ping.multicast.enabled": false,
-        "cluster.name": "twodoteks-prod",
+        "cluster.name": "prod",
         "marvel.agent.exporters.id2.type": "http",
         "marvel.agent.exporters.id2.host": [ "http://127.0.0.1:9210" ],
         "marvel.agent.exporters.id2.auth.username": "remote",
