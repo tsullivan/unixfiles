@@ -2,6 +2,9 @@
   "defaults": {
     "config": {
       "discovery.zen.ping.unicast.hosts": ["localhost"]
+    },
+    "shield": {
+      "users": [ { "username": "admin", "password": "notsecure", "roles": ["admin"] } ]
     }
   },
   "clusters": {
@@ -13,6 +16,26 @@
       "nodes": [
         { "node": { "data": true, "master": true } }
       ]
+    },
+    "v2.x": {
+      "binary": "/Users/tsullivan/build/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
+      "plugins": [
+        { "name": "license", "path": "file:///Users/tsullivan/build/license-2.3.0-SNAPSHOT.zip" },
+        { "name": "watcher", "path": "file:///Users/tsullivan/build/watcher-2.3.0-SNAPSHOT.zip" },
+        { "name": "shield", "path": "file:///Users/tsullivan/build/shield-2.3.0-SNAPSHOT.zip" },
+        { "name": "marvel-agent", "path": "file:///Users/tsullivan/build/marvel-agent-2.3.0-SNAPSHOT.zip" }
+      ],
+      "nodes": [
+        { "node": { "data": true, "master": true } }
+      ]
+    },
+    "v2.2.1": {
+      "binary": "/Users/tsullivan/build/elasticsearch-2.2.1.tar.gz",
+      "plugins": [],
+      "nodes": [
+        { "node": { "data": true, "master": true } }
+      ]
     }
   }
 }
+
