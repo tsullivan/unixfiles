@@ -4,18 +4,44 @@
       "discovery.zen.ping.unicast.hosts": ["localhost"]
     },
     "shield": {
-      "users": [ { "username": "admin", "password": "notsecure", "roles": ["admin"] } ]
+      "users": [
+        { "username": "admin", "password": "notsecure", "roles": ["admin"] },
+        { "username": "kibana", "password": "notsecure", "roles": ["kibana4_server"] },
+        { "username": "access", "password": "notsecure", "roles": ["kibana4", "monitoring_user"] },
+        { "username": "remote", "password": "notsecure", "roles": ["remote_monitoring_agent"] }
+      ]
     }
   },
   "clusters": {
-    "master": {
+    "master-prod": {
+      "binary": "/Users/tsullivan/build/elasticsearch-5.0.0-SNAPSHOT.tar.gz",
+      "plugins": [
+        { "name": "xpack", "path": "file:///Users/tsullivan/build/xpack-5.0.0-SNAPSHOT.zip" }
+      ],
+      "nodes": [
+        { "node": { "data": true, "master": true } },
+        { "node": { "data": true, "master": false } }
+      ],
+      "config": {
+        "cluster.name": "master-prod",
+        "xpack.monitoring.agent.exporters.id2.type": "http",
+        "xpack.monitoring.agent.exporters.id2.host": "http://127.0.0.1:9210",
+        "xpack.monitoring.agent.exporters.id2.auth.username": "remote",
+        "xpack.monitoring.agent.exporters.id2.auth.password": "notsecure"
+      }
+    },
+    "master-mon": {
       "binary": "/Users/tsullivan/build/elasticsearch-5.0.0-SNAPSHOT.tar.gz",
       "plugins": [
         { "name": "xpack", "path": "file:///Users/tsullivan/build/xpack-5.0.0-SNAPSHOT.zip" }
       ],
       "nodes": [
         { "node": { "data": true, "master": true } }
-      ]
+      ],
+      "config": {
+        "cluster.name": "master-mon",
+        "http.port": 9210
+      }
     },
     "v2.x": {
       "binary": "/Users/tsullivan/build/elasticsearch-2.3.0-SNAPSHOT.tar.gz",
