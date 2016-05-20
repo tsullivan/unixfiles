@@ -34,6 +34,6 @@
 # }
 
 # time.sh {
-	# date(1) format for the time. Americans might want to have "%I:%M %p".
-	export TMUX_POWERLINE_SEG_TIME_FORMAT="%H:%M"
+	# date(1) format for the time for Americans
+	export TMUX_POWERLINE_SEG_TIME_FORMAT="%I:%M %p"
 # }
