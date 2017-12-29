@@ -1,28 +1,28 @@
 [user]
-	name = Timothy Sullivan
+  name = Timothy Sullivan
 [push]
-	default = nothing
+  default = nothing
 [merge]
-	keepBackup = false;
+  keepBackup = false;
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
+  meta = yellow bold
+  frag = magenta bold
 [core]
-	excludesfile = ~/.gitignore_global
-	ignorecase = false
-	editor = vim -f
+  excludesfile = ~/.gitignore_global
+  ignorecase = false
+  editor = vim -f
 [alias]
-	ci = commit -v
-	co = checkout
-	cob = checkout -b
-	lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+  ci = commit -v
+  co = checkout
+  cob = checkout -b
+  lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
