@@ -1,5 +1,4 @@
 # Custom additions:
-# git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 # git clone https://github.com/olivierverdier/zsh-git-prompt.git .zsh/git-prompt
@@ -19,10 +18,9 @@ source $ZSH/oh-my-zsh.sh
 # order of these matters
 
 # Init git-prompt
-source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/git-prompt/zshrc.sh
 source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/git-prompt/zshrc.sh
 
 autoload -U +X compinit && compinit
 autoload -U +X promptinit && promptinit
