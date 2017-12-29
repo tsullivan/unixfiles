@@ -57,7 +57,7 @@ alias scr="cd ~/scripts"
 
 # Dump things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
-alias prunestall="trash node_modules && rm yarn.lock && yarn"
+alias prunestall="trash node_modules && git clean -fxd node_modules && npm install"
 
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
