@@ -55,7 +55,7 @@ alias xpe="cd ~/code/elasticsearch-extra/x-pack-elasticsearch"
 alias es="cd ~/code/elasticsearch"
 alias scr="cd ~/scripts"
 
-# Dump things
+# Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
 alias prunestall="trash node_modules && git clean -fxd node_modules && npm install"
 
