@@ -37,6 +37,9 @@ export PAGER=cat
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# Homebrew
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # Go
 export GOPATH="$HOME/work"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
