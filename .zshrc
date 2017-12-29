@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 CASE_SENSITIVE="true"
 
 # Plugins
-plugins=(git node fasd)
+plugins=(git node)
 
 # Init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
