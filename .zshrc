@@ -50,14 +50,14 @@ alias larth="ls -larth"
 
 # Zooom around
 alias kbn="cd ~/code/kibana"
-alias xpk="cd ~/code/x-pack-kibana"
+alias xpk="cd ~/code/kibana-extra/x-pack-kibana"
 alias xpe="cd ~/code/elasticsearch-extra/x-pack-elasticsearch"
 alias es="cd ~/code/elasticsearch"
 alias scr="cd ~/scripts"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
-alias prunestall="trash node_modules && git clean -fxd node_modules && npm install"
+alias prunestall="trash node_modules && yarn install"
 
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
