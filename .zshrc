@@ -81,6 +81,10 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
+bindkey -e
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
+
 # env vars for applications
 source ~/.env.sh
 
