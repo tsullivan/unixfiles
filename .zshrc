@@ -100,9 +100,11 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# GVM/Go
+export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
+export PATH="$GOROOT/bin:$PATH"
+export GOPATH=$HOME/code/go
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/tsullivan/.sdkman"
-[[ -s "/Users/tsullivan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tsullivan/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
