@@ -37,22 +37,24 @@ export PAGER=cat
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# GVM/Go
+export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
+export PATH="$GOROOT/bin:$PATH"
+export GOPATH=$HOME/code/go
+
 # Homebrew
 export PATH="/usr/local/opt/curl/bin:$PATH"
-
-# Go
-export GOPATH="$HOME/work"
-export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 # Aliases
 alias x=gitx
 alias larth="ls -larth"
 
 # Zooom around
-alias kbn="cd ~/code/kibana"
-alias xpk="cd ~/code/kibana-extra/x-pack-kibana"
-alias xpe="cd ~/code/elasticsearch-extra/x-pack-elasticsearch"
-alias es="cd ~/code/elasticsearch"
+alias kbn="cd ~/elastic/kibana"
+alias xpk="cd ~/elastic/kibana-extra/x-pack-kibana"
+alias xpe="cd ~/elastic/elasticsearch-extra/x-pack-elasticsearch"
+alias  es="cd ~/elastic/elasticsearch"
+alias beats="cd $GOPATH/src/github.com/elastic/beats"
 alias scr="cd ~/scripts"
 
 # Dumb things
@@ -100,11 +102,8 @@ export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# GVM/Go
-export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
-export PATH="$GOROOT/bin:$PATH"
-export GOPATH=$HOME/code/go
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+[ -s "/Users/tsullivan/.jabba/jabba.sh" ] && source "/Users/tsullivan/.jabba/jabba.sh"
