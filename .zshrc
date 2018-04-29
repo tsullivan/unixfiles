@@ -49,14 +49,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 alias x=gitx
 alias larth="ls -larth"
 
-# Zooom around
-alias kbn="cd ~/elastic/kibana"
-alias xpk="cd ~/elastic/kibana-extra/x-pack-kibana"
-alias xpe="cd ~/elastic/elasticsearch-extra/x-pack-elasticsearch"
-alias  es="cd ~/elastic/elasticsearch"
-alias beats="cd $GOPATH/src/github.com/elastic/beats"
-alias scr="cd ~/scripts"
-
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
 alias prunestall="trash node_modules && yarn install"
@@ -95,6 +87,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # FZF
 export FZF_DEFAULT_COMMAND='ag -g ""'
