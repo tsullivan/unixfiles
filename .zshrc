@@ -51,7 +51,6 @@ alias larth="ls -larth"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
-alias prunestall="trash node_modules && yarn install"
 
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
