@@ -52,6 +52,12 @@ alias larth="ls -larth"
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
 
+crap()
+{
+  cat /dev/random | strings | head -1500 | awk -v ORS="'," '1'
+}
+
+
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
 
