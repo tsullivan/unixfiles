@@ -48,9 +48,11 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 # Aliases
 alias x=gitx
 alias larth="ls -larth"
+alias vim="nvim"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
+code() { cd ~/code/${1} }
 
 crap()
 {
