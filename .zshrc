@@ -28,8 +28,8 @@ autoload -U +X promptinit && promptinit
 # Environment variables
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
-export HISTSIZE=20000
-export SAVEHIST=20000
+export HISTSIZE=1000
+export SAVEHIST=1000
 export HISTFILE=$HOME/.history
 export WORDCHARS="*?_[]~&;:!#$%^(){}<>"
 export MANPAGER=/usr/bin/less
@@ -53,6 +53,13 @@ alias vim="nvim"
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
 code() { cd ~/code/${1} }
+
+export NVM_DIR="$HOME/.nvm"
+export AVN_DIR="$HOME/.avm/bin"
+loadnvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # load nvm
+  [ -s "$AVN_DIR/avn.sh" ] && . "$AVN_DIR/avn.sh" # load avn
+}
 
 crap()
 {
@@ -88,12 +95,6 @@ bindkey '^[[1;3C' forward-word
 
 # env vars for applications
 source ~/.env.sh
-
-# NVM / AVN
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
