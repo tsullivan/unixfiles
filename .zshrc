@@ -6,11 +6,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Use case-sensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE=true # Use case-sensitive completion.
+NVM_LAZY_LOAD=true # make startup faster
 
 # Plugins
-plugins=(git docker docker-compose)
+plugins=(zsh-nvm git docker docker-compose)
 
 # Init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -55,11 +55,8 @@ alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_br
 code() { cd ~/code/${1} }
 
 export NVM_DIR="$HOME/.nvm"
-export AVN_DIR="$HOME/.avm/bin"
-loadnvm() {
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # load nvm
-  [ -s "$AVN_DIR/avn.sh" ] && . "$AVN_DIR/avn.sh" # load avn
-}
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 crap()
 {
@@ -105,8 +102,8 @@ export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -s "/Users/tsullivan/.jabba/jabba.sh" ] && source "/Users/tsullivan/.jabba/jabba.sh"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[ -s "/Users/tsullivan/.jabba/jabba.sh" ] && source "/Users/tsullivan/.jabba/jabba.sh"
