@@ -49,14 +49,11 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 alias x=gitx
 alias larth="ls -larth"
 alias vim="nvim"
+alias n="nvm use"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
 code() { cd ~/code/${1} }
-
-export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 crap()
 {
@@ -92,6 +89,9 @@ bindkey '^[[1;3C' forward-word
 
 # env vars for applications
 source ~/.env.sh
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
