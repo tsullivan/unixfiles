@@ -6,8 +6,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-CASE_SENSITIVE=true # Use case-sensitive completion.
-NVM_LAZY_LOAD=true # make startup faster
+export CASE_SENSITIVE=true # Use case-sensitive completion.
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
 
 # Plugins
 plugins=(zsh-nvm git docker docker-compose)
@@ -47,7 +48,8 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Aliases
 alias x=gitx
-alias larth="ls -larth"
+alias lrth="ls -larth"
+alias lrth="ls -lrth"
 alias vim="nvim"
 alias n="nvm use"
 
