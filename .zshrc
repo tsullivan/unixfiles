@@ -7,8 +7,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
 export CASE_SENSITIVE=true # Use case-sensitive completion.
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
 
 # Plugins
 plugins=(zsh-nvm git docker docker-compose)
@@ -51,7 +49,6 @@ alias x=gitx
 alias lrth="ls -larth"
 alias lrth="ls -lrth"
 alias vim="nvim"
-alias n="nvm use"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
@@ -94,6 +91,7 @@ source ~/.env.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -109,3 +107,9 @@ export FZF_TMUX=1
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tsullivan/local/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tsullivan/local/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tsullivan/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tsullivan/local/google-cloud-sdk/completion.zsh.inc'; fi
