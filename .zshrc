@@ -34,7 +34,6 @@ export WORDCHARS="*?_[]~&;:!#$%^(){}<>"
 export MANPAGER=/usr/bin/less
 export PAGER=cat
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
