@@ -37,8 +37,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
-export PATH="$GOROOT/bin:$PATH"
 export GOPATH=$HOME/code/go
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # Homebrew
 export PATH="/usr/local/opt/curl/bin:$PATH"
