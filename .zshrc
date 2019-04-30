@@ -51,6 +51,7 @@ alias vim="nvim"
 
 # Dumb things
 alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
+alias gitcop='git checkout -p .'
 code() { cd ~/code/${1} }
 
 crap()
