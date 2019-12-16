@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 export CASE_SENSITIVE=true # Use case-sensitive completion.
 
 # Plugins
-plugins=(zsh-nvm git docker docker-compose)
+plugins=(git docker-compose)
 
 # Init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 # order of these matters
 
 # Init git-prompt
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/git-prompt/zshrc.sh
 
@@ -50,7 +50,7 @@ alias lrth="ls -lrth"
 alias vim="nvim"
 
 # Dumb things
-alias gitsync='git fetch upstream && git pull --rebase upstream $(git_current_branch)'
+alias gitsync='git fetch -p upstream && git pull --rebase upstream $(git_current_branch)'
 alias gitcop='git checkout -p .'
 code() { cd ~/code/${1} }
 
@@ -91,7 +91,7 @@ source ~/.env.sh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -101,15 +101,3 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -s "/Users/tsullivan/.jabba/jabba.sh" ] && source "/Users/tsullivan/.jabba/jabba.sh"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tsullivan/local/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tsullivan/local/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/tsullivan/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tsullivan/local/google-cloud-sdk/completion.zsh.inc'; fi
