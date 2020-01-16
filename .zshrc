@@ -49,9 +49,6 @@ alias lrth="ls -larth"
 alias lrth="ls -lrth"
 alias vim="nvim"
 
-# Dumb things
-alias gitsync='git fetch -p upstream && git pull --rebase upstream $(git_current_branch)'
-alias gitcop='git checkout -p .'
 code() { cd ~/code/${1} }
 
 crap()
