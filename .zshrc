@@ -47,7 +47,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 alias x=gitx
 alias lrth="ls -larth"
 alias lrth="ls -lrth"
-alias vim="nvim"
 
 code() { cd ~/code/${1} }
 
