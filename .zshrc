@@ -47,11 +47,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 alias x=gitx
 alias lrth="ls -larth"
 alias lrth="ls -lrth"
-alias vim="nvim"
 
-# Dumb things
-alias gitsync='git fetch -p upstream && git pull --rebase upstream $(git_current_branch)'
-alias gitcop='git checkout -p .'
 code() { cd ~/code/${1} }
 
 crap()
@@ -98,6 +94,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # FZF
 export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
