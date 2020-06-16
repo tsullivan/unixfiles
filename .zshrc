@@ -98,3 +98,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# iterm2 shell integration
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
+test -e ~/.iterm3_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
