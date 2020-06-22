@@ -16,9 +16,12 @@ source $ZSH/oh-my-zsh.sh
 
 # order of these matters
 
-# Init git-prompt
 # source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+#
+# Init git-prompt
+# haskell bin for git prompt
+export GIT_PROMPT_EXECUTABLE="haskell"
 source ~/.zsh/git-prompt/zshrc.sh
 
 autoload -U +X compinit && compinit
@@ -93,12 +96,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # FZF
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# iterm2 shell integration
-export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
-test -e ~/.iterm3_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
