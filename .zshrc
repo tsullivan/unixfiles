@@ -8,8 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 export CASE_SENSITIVE=true # Use case-sensitive completion.
 
+
 # Plugins
-plugins=(git docker-compose)
+plugins=(git ssh-agent docker-compose)
 
 # Init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -38,32 +39,18 @@ export MANPAGER=/usr/bin/less
 export PAGER=cat
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+# Docker Desktop for Windows
+DockerResourcesBin="/mnt/c/Program Files/Docker/Docker/resources/bin"
+export PATH=$PATH:$DockerResourcesBin
+
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
 export GOPATH=$HOME/code/go
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
-
-# Homebrew
-export PATH="/usr/local/opt/curl/bin:$PATH"
-
-# Aliases
-alias x=gitx
-alias lrth="ls -larth"
-alias lrth="ls -lrth"
-
-code() { cd ~/code/${1} }
-
-crap()
-{
-  cat /dev/random | strings | head -1500 | awk -v ORS="'," '1'
-}
-
 
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Git prompt
-ZSH_THEME_GIT_PROMPT_NOCACHE=1 # disable status caching
 PROMPT='%~%b$(git_super_status) %# '
 
 # zsh-history-substring-search
@@ -92,12 +79,12 @@ source ~/.env.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Linux GUI
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
