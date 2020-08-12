@@ -39,10 +39,6 @@ export MANPAGER=/usr/bin/less
 export PAGER=cat
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
-# Docker Desktop for Windows
-DockerResourcesBin="/mnt/c/Program Files/Docker/Docker/resources/bin"
-export PATH=$PATH:$DockerResourcesBin
-
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
 export GOPATH=$HOME/code/go
@@ -75,9 +71,12 @@ bindkey '^[[1;3C' forward-word
 # env vars for applications
 source ~/.env.sh
 
+# PyENV
+# [ -s "$HOME/.pyenv.sh" ] && \. "$HOME/.pyenv.sh"  # This loads pyenv
+
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
