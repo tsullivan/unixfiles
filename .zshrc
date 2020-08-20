@@ -17,7 +17,7 @@ export CASE_SENSITIVE=true # Use case-sensitive completion.
 
 
 # Plugins
-plugins=(git ssh-agent docker-compose)
+plugins=(git docker-compose)
 
 # Git prompt custom theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -43,7 +43,7 @@ export HISTFILE=$HOME/.history
 export WORDCHARS="*?_[]~&;:!#$%^(){}<>"
 export MANPAGER=/usr/bin/less
 export PAGER=cat
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"

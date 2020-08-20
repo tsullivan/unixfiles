@@ -1,7 +1,7 @@
 [user]
   name = Timothy Sullivan
 [push]
-  default = nothing
+  default = current
 [merge]
   keepBackup = false;
 [color]
