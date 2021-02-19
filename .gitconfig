@@ -1,7 +1,7 @@
 [user]
   name = Timothy Sullivan
 [push]
-  default = current
+	default = current
 [merge]
   keepBackup = false;
 [color]
@@ -19,9 +19,13 @@
   excludesfile = ~/.gitignore_global
   ignorecase = false
   editor = vim -f
+	autocrlf = false
+	filemode = false
 [alias]
   co = checkout
   cob = checkout -b
   lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
 [hub]
   protocol = ssh
+[branch]
+	autosetuprebase = always
