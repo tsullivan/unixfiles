@@ -35,7 +35,8 @@ autoload -U +X compinit && compinit
 autoload -U +X promptinit && promptinit
 
 # Environment variables
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/snap/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export HISTSIZE=1000
 export SAVEHIST=1000
