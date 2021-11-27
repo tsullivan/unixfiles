@@ -21,6 +21,7 @@
   editor = vim -f
 	autocrlf = false
 	filemode = false
+	compression = 0
 [alias]
   co = checkout
   cob = checkout -b
