@@ -1,6 +1,5 @@
 [user]
   name = Timothy Sullivan
-  email = tsullivan@elastic.co
 [push]
 	default = current
 [merge]
