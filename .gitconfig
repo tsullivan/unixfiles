@@ -1,5 +1,6 @@
 [user]
   name = Timothy Sullivan
+  email = tsullivan@elastic.co
 [push]
 	default = current
 [merge]
@@ -30,3 +31,9 @@
   protocol = ssh
 [branch]
 	autosetuprebase = always
+[pull]
+	rebase = false
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
