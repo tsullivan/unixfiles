@@ -38,13 +38,19 @@ autoload -U +X promptinit && promptinit
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTFILE=$HOME/.history
 export WORDCHARS="*?_[]~&;:!#$%^(){}<>"
 export MANPAGER=/usr/bin/less
 export PAGER=cat
 # export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+# Those who do not remember history are doomed to repeat it
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export HISTFILE=$HOME/.history
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_verify            # show command with history expansion to user before running it
 
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"

@@ -8,6 +8,5 @@ Session.vim
 target
 .DS_Store
 .DS_Store?
-ebay.log
 node_modules
-myLocal.xml
+data0*
