@@ -35,7 +35,7 @@ autoload -U +X compinit && compinit
 autoload -U +X promptinit && promptinit
 
 # Environment variables
-export PATH="$HOME/bin:/usr/local/bin:/snap/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export HISTSIZE=1000
@@ -75,20 +75,3 @@ bindkey '^[[1;3C' forward-word
 
 # env vars for applications
 source ~/.env.sh
-
-# PyENV
-# [ -s "$HOME/.pyenv.sh" ] && \. "$HOME/.pyenv.sh"  # This loads pyenv
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# FZF
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--no-height --reverse --border'
-export FZF_TMUX=1
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
