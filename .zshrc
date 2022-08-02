@@ -79,5 +79,21 @@ bindkey -e
 bindkey '^[[1;3D' backward-word
 bindkey '^[[1;3C' forward-word
 
+# FZF
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--no-height --reverse --border'
+export FZF_TMUX=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
+
 # env vars for applications
 source ~/.env.sh
