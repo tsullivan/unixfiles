@@ -35,16 +35,22 @@ autoload -U +X compinit && compinit
 autoload -U +X promptinit && promptinit
 
 # Environment variables
-export PATH="$HOME/bin:/usr/local/bin:/snap/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTFILE=$HOME/.history
 export WORDCHARS="*?_[]~&;:!#$%^(){}<>"
 export MANPAGER=/usr/bin/less
 export PAGER=cat
 # export SSH_KEY_PATH="~/.ssh/id_rsa"
+
+# Those who do not remember history are doomed to repeat it
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export HISTFILE=$HOME/.history
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_verify            # show command with history expansion to user before running it
 
 # GVM/Go
 export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
@@ -73,16 +79,6 @@ bindkey -e
 bindkey '^[[1;3D' backward-word
 bindkey '^[[1;3C' forward-word
 
-# env vars for applications
-source ~/.env.sh
-
-# PyENV
-# [ -s "$HOME/.pyenv.sh" ] && \. "$HOME/.pyenv.sh"  # This loads pyenv
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -92,3 +88,16 @@ export FZF_TMUX=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s ~/.nvm/nvm.sh ] && \. ~/.nvm/nvm.sh  # This loads nvm
+
+# env vars for applications
+source ~/.env.sh
