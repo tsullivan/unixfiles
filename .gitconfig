@@ -1,9 +1,34 @@
 [user]
   name = Timothy Sullivan
+
+[init]
+	defaultBranch = main
+[core]
+  excludesfile = ~/.gitignore_global
+  ignorecase = false
+  editor = vim -f
+	autocrlf = false
+	filemode = false
+	compression = 0
+
 [push]
 	default = current
 [merge]
   keepBackup = false;
+[pull]
+	rebase = false
+[fetch]
+	prune = true
+[branch]
+  autosetuprebase = always
+
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
 [color]
   branch = auto
   diff = auto
@@ -15,26 +40,11 @@
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-[core]
-  excludesfile = ~/.gitignore_global
-  ignorecase = false
-  editor = vim -f
-	autocrlf = false
-	filemode = false
-	compression = 0
+
 [alias]
   co = checkout
   cob = checkout -b
   lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
+
 [hub]
   protocol = ssh
-[branch]
-	autosetuprebase = always
-[pull]
-	rebase = false
-[fetch]
-	prune = true
-[diff]
-	colorMoved = zebra
-[init]
-	defaultBranch = main

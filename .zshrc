@@ -76,8 +76,8 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
 bindkey -e
-bindkey '^[[1;3D' backward-word
-bindkey '^[[1;3C' forward-word
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
