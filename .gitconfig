@@ -21,6 +21,8 @@
 	prune = true
 [branch]
   autosetuprebase = always
+[commit]
+	verbose = true
 
 [diff]
   tool = difftastic
