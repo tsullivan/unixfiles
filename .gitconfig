@@ -26,6 +26,7 @@
 
 [diff]
   tool = difftastic
+	noprefix = true
 [difftool]
   prompt = false
 [difftool "difftastic"]
