@@ -10,3 +10,4 @@ target
 .DS_Store?
 node_modules
 data0*
+.vim/coc-settings.json

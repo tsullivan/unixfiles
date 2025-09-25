@@ -6,15 +6,18 @@
 [core]
   excludesfile = ~/.gitignore_global
   ignorecase = false
-  editor = vim -f
+	editor = nvim
 	autocrlf = false
 	filemode = false
 	compression = 0
+	symlinks = false
 
 [push]
 	default = current
 [merge]
-  keepBackup = false;
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
 [pull]
 	rebase = false
 [fetch]
@@ -34,8 +37,6 @@
 
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX
-[rerere]
-  enabled = true
 
 [color]
   branch = auto
@@ -53,6 +54,7 @@
   co = checkout
   cob = checkout -b
   lg = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
+  ld = log --format='%Cred%h%Creset %s %Cgreen(%cI) %C(blue)<%an>%Creset%C(yellow)%d%Creset'
 
 [hub]
   protocol = ssh

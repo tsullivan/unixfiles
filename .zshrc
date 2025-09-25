@@ -15,9 +15,8 @@ export ZSH=$HOME/.oh-my-zsh
 
 export CASE_SENSITIVE=true # Use case-sensitive completion.
 
-
 # Plugins
-plugins=(git docker-compose)
+plugins=(git docker-compose zsh-syntax-highlighting zsh-history-substring-search)
 
 # Git prompt custom theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -27,8 +26,6 @@ source $ZSH/oh-my-zsh.sh
 
 # order of these matters
 
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 autoload -U +X compinit && compinit
@@ -52,13 +49,8 @@ setopt hist_expire_dups_first # delete duplicates first when HISTFILE size excee
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_verify            # show command with history expansion to user before running it
 
-# GVM/Go
-export GOROOT="$HOME/.gvm/versions/go1.9.2.darwin.amd64"
-export GOPATH=$HOME/code/go
-
 # Prompt
 LSCOLORS=ExFxBxDxCxegedabagacad
-
 
 # zsh-history-substring-search
 # bind UP and DOWN arrow keys
@@ -85,18 +77,14 @@ export FZF_DEFAULT_OPTS='--no-height --reverse --border'
 export FZF_TMUX=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s ~/.nvm/nvm.sh ] && \. ~/.nvm/nvm.sh  # This loads nvm
+# Cool Shiz
+alias rgn="rg -n"
+dateIso8601() {
+  date +"%Y-%m-%dT%H:%M:%S%z"
+}
 
 # env vars for applications
 source ~/.env.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
