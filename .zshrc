@@ -16,7 +16,7 @@ export ZSH=$HOME/.oh-my-zsh
 export CASE_SENSITIVE=true # Use case-sensitive completion.
 
 # Plugins
-plugins=(git docker-compose zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git docker-compose tmux zsh-syntax-highlighting zsh-history-substring-search)
 
 # Git prompt custom theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -83,8 +83,41 @@ dateIso8601() {
   date +"%Y-%m-%dT%H:%M:%S%z"
 }
 
+glrrv() {
+  local base="${1:-main}"
+  local branch behind ahead
+  branch=$(git rev-parse --abbrev-ref HEAD) || return
+  IFS=$'\t' read -r behind ahead < <(git rev-list --left-right --count "$base"...HEAD) || return
+  echo "${branch} is ${ahead} ahead, ${behind} behind ${base}"
+}
+
+# Get the PR link for the current branch
+ghshowpr() {
+  local link=$(gh pr view --json url --template '{{.url}}' 2>/dev/null)
+  
+  if [ -n "$link" ]; then
+    echo "$link"
+    # Optional: Copy to clipboard (macOS)
+    # echo "$link" | pbcopy && echo " (Copied to clipboard)"
+  else
+    echo "No PR found for the current branch."
+    return 1
+  fi
+}
+
 # env vars for applications
 source ~/.env.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
+#
+#

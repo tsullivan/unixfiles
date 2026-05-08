@@ -56,7 +56,8 @@
 [alias]
   co = checkout
   cob = checkout -b
-  lg = log --pretty=format:"%h %ad %s" --date=short
+	lg = log --pretty=format:'%C(yellow)%h%Creset %C(green)%ar%Creset %C(blue)%an <%ae>%Creset %s' --date=relative
+	ld = log --pretty=format:'%C(yellow)%h%Creset %C(green)%ad%Creset %C(blue)%an <%ae>%Creset %s' --date=short
 
 [hub]
   protocol = ssh

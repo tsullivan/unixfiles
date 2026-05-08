@@ -11,3 +11,17 @@ target
 node_modules
 data0*
 .vim/coc-settings.json
+
+# Cursor plans
+*_ANALYSIS.md
+*_BUG.md
+*_FIX.md
+*_PLAN.md
+*_SUMMARY.md
+FIX_*.md
+FLYOUT_BUG*.md
+SELF_REVIEW.md
+PLAN_*.md
+
+.playwright-mcp
+.claude
