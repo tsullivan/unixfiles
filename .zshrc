@@ -85,10 +85,11 @@ dateIso8601() {
 
 glrrv() {
   local base="${1:-main}"
-  local branch behind ahead
+  local branch behind ahead changed_files
   branch=$(git rev-parse --abbrev-ref HEAD) || return
   IFS=$'\t' read -r behind ahead < <(git rev-list --left-right --count "$base"...HEAD) || return
-  echo "${branch} is ${ahead} ahead, ${behind} behind ${base}"
+  changed_files=$(git diff --name-only "$base"...HEAD | wc -l | tr -d ' ')
+  echo "${branch} is ${ahead} ahead, ${behind} behind ${base}, ${changed_files} files changed"
 }
 
 # Get the PR link for the current branch
