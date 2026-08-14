@@ -1,0 +1,6 @@
+--hidden
+--line-number
+--smart-case
+
+--glob
+!api_docs/*

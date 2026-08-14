@@ -1,0 +1,28 @@
+bell-features = system,attention
+
+# theme = dark:Violet Dark,light:Violet Light
+# theme = dark:Tomorrow Night Eighties,light:Tomorrow
+
+# dark themes
+# theme = Cyberpunk Scarlet Protocol
+# theme = Gruvbox Material Dark
+# theme = Pale Night Hc
+# theme = Tomorrow Night Eighties
+# theme = 0x96f
+# theme = Abernathy
+# theme = Doom One
+# theme = Firewatch
+# theme = Idle Toes
+# theme = Nordfox
+# theme = Sonokai
+# theme = Subliminal
+
+# neutral themes
+# theme = Misterioso
+# theme = Grey Green
+# theme = Mirage
+# theme = Tearout
+
+theme = Grey Green
+
+# custom-shader = ~/.config/ghostty/shaders/galaxy-customized.glsl
