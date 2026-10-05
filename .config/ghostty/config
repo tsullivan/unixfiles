@@ -23,6 +23,6 @@ bell-features = system,attention
 # theme = Mirage
 # theme = Tearout
 
-theme = Grey Green
-
-# custom-shader = ~/.config/ghostty/shaders/galaxy-customized.glsl
+# theme = light:seoul256-light,dark:seoul256-dark
+# theme = seoul256-dark
+theme = light:Tomorrow,dark:Tomorrow Night Eighties
